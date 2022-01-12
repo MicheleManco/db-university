@@ -14,7 +14,7 @@
 
 2:  SELECT *
     FROM students  
-    WHERE name LIKE `E%`;
+    WHERE name LIKE "E%";
 
 3:  SELECT *
     FROM students 
