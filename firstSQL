@@ -29,7 +29,7 @@
     WHERE phone IS NOT NULL;
 
 6:  SELECT *
-    FROM students 
+    FROM exams
     WHERE MONTH (date) = 6 OR MONTH (date) = 7 AND year(date) IN (2020);
 
 7:  SELECT COUNT (degree_id)
