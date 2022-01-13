@@ -58,7 +58,7 @@ JOIN
                 ON degrees.department_id = departments.id 
     ORDER BY students.surname, students.name
 
-5:  SELECT degrees.name , courses.name , teachers.name
+5:  SELECT degrees.name AS corsoDiLaurea, courses.name  AS corsi, teachers.name AS insegnanti
     FROM degrees 
     JOIN courses
         ON degrees.id = courses.degree_id
