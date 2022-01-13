@@ -34,4 +34,18 @@ JOIN
 
 
 --Join
-1:
+1:  SELECT * 
+    FROM students 
+        JOIN degrees 
+            ON students.degree_id = degrees.id 
+    WHERE degrees.name = "Corso di Laurea in Economia"
+
+2:  SELECT * 
+    FROM degrees 
+        JOIN departments 
+            ON degrees.department_id = departments.id 
+    WHERE departments.name = "Dipartimento di Neuroscienze"
+
+3:  SELECT * 
+    FROM course_teacher 
+    WHERE teacher_id = 44 
