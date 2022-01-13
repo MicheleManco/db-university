@@ -67,7 +67,8 @@ JOIN
     JOIN teachers
         ON course_teacher.teacher_id = teachers.id
     
-6:  SELECT teachers.name AS insegnanti, 
+6:  SELECT teachers.name AS insegnanti, departments.name AS dipartimento 
+    FROM departments
     JOIN degrees 
         ON departments.id = degrees.department_id
     JOIN courses
@@ -77,3 +78,5 @@ JOIN
     JOIN teachers
         ON course_teacher.teacher_id = teachers.id
     WHERE departments.name = "Dipartimento di Matematica"
+    GROUP BY teachers.name
+    ORDER BY teachers.name
