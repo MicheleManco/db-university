@@ -49,3 +49,20 @@ JOIN
 3:  SELECT * 
     FROM course_teacher 
     WHERE teacher_id = 44 
+
+4:  SELECT * 
+    FROM students 
+        JOIN degrees 
+            ON students.degree_id = degrees.id 
+            JOIN departments 
+                ON degrees.department_id = departments.id 
+    ORDER BY students.surname, students.name
+
+5:  SELECT degrees.name , courses.name , teachers.name
+    FROM degrees 
+    JOIN courses
+        ON degrees.id = courses.degree_id
+    JOIN course_teacher
+        ON courses.id =course_teacher.course_id
+    JOIN teachers
+        ON course_teacher.teacher_id = teachers.id
