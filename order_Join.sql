@@ -13,6 +13,8 @@ JOIN
     in ordine alfabetico per cognome e nome
 5. Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
 6. Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54)
+7. BONUS: Selezionare per ogni studente quanti tentativi d'esame ha sostenuto per
+superare ciascuno dei suoi esami
 */
 
 -- GroupBy--------------------------------------------------------------------------------------------------------------------------
@@ -80,3 +82,14 @@ JOIN
     WHERE departments.name = "Dipartimento di Matematica"
     GROUP BY teachers.name
     ORDER BY teachers.name
+
+7:  SELECT students.name AS nome, students.surname AS cognome,vote, courses.name AS corso
+    FROM students
+    JOIN exam_student
+        ON students.id = exam_student.student_id
+    JOIN exams
+        ON exam_student.exam_id = exams.id
+    JOIN courses
+        ON exams.course_id = courses.id
+
+    ORDER BY students.surname , students.name , courses.name
