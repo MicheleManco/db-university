@@ -66,3 +66,14 @@ JOIN
         ON courses.id =course_teacher.course_id
     JOIN teachers
         ON course_teacher.teacher_id = teachers.id
+    
+6:  SELECT teachers.name AS insegnanti, 
+    JOIN degrees 
+        ON departments.id = degrees.department_id
+    JOIN courses
+        ON degrees.id = courses.degree_id
+    JOIN course_teacher
+        on courses.id = course_teacher.course_id
+    JOIN teachers
+        ON course_teacher.teacher_id = teachers.id
+    WHERE departments.name = "Dipartimento di Matematica"
