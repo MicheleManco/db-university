@@ -15,7 +15,7 @@ JOIN
 6. Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54)
 */
 
--- GroupBy
+-- GroupBy--------------------------------------------------------------------------------------------------------------------------
 1:  SELECT COUNT(id) AS Nstudenti, year(enrolment_date)
     FROM students 
         GROUP BY year(enrolment_date)
@@ -33,7 +33,7 @@ JOIN
         GROUP BY department_id 
 
 
---Join
+--Join------------------------------------------------------------------------------------------------------------------------------
 1:  SELECT * 
     FROM students 
         JOIN degrees 
