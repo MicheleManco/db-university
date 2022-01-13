@@ -30,7 +30,7 @@
 
 6:  SELECT *
     FROM exams
-    WHERE MONTH (date) = 6 OR MONTH (date) = 7 AND year(date) IN (2020);
+    WHERE MONTH (date) IN (6, 7) AND year(date) IN (2020);
 
-7:  SELECT COUNT (degree_id)
+7:  SELECT COUNT (*)
     FROM students
