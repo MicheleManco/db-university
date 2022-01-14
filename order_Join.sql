@@ -36,7 +36,7 @@ superare ciascuno dei suoi esami
 
 
 --Join------------------------------------------------------------------------------------------------------------------------------
-1:  SELECT * 
+1:  SELECT students.* 
     FROM students 
         JOIN degrees 
             ON students.degree_id = degrees.id 
@@ -54,7 +54,7 @@ superare ciascuno dei suoi esami
 
 -- o 
 
-3:  SELECT *
+3:  SELECT courses.*
     FROM courses
     JOIN course_teacher
         ON courses.id = course_teacher.course_id
@@ -79,7 +79,7 @@ superare ciascuno dei suoi esami
     JOIN teachers
         ON course_teacher.teacher_id = teachers.id
     
-6:  SELECT teachers.name AS insegnanti, departments.name AS dipartimento 
+6:  SELECT DISTINCT teachers.id, teachers.name AS nome_insegnanti, teachers.surname AS cognome_insegnanti, departments.name AS dipartimento 
     FROM departments
     JOIN degrees 
         ON departments.id = degrees.department_id
@@ -93,7 +93,7 @@ superare ciascuno dei suoi esami
     GROUP BY teachers.name
     ORDER BY teachers.name
 
-7:  SELECT students.name AS nome, students.surname AS cognome,vote, courses.name AS corso
+7:  SELECT students.name AS nome, students.surname AS cognome, courses.name AS corso, COUNT(courses.id)
     FROM students
     JOIN exam_student
         ON students.id = exam_student.student_id
@@ -101,5 +101,5 @@ superare ciascuno dei suoi esami
         ON exam_student.exam_id = exams.id
     JOIN courses
         ON exams.course_id = courses.id
-
-    ORDER BY students.surname , students.name , courses.name
+    GROUP BY students.id, courses.id
+    
