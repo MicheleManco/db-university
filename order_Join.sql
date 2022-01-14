@@ -52,6 +52,16 @@ superare ciascuno dei suoi esami
     FROM course_teacher 
     WHERE teacher_id = 44 
 
+-- o 
+
+3:  SELECT *
+    FROM courses
+    JOIN course_teacher
+        ON courses.id = course_teacher.course_id
+        JOIN teachers
+            ON course_teacher.teacher_id = teachers.id
+    WHERE course_teacher.teacher_id= 44
+
 4:  SELECT * 
     FROM students 
         JOIN degrees 
